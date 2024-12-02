@@ -206,6 +206,12 @@ func getStreamSettingsXray(decoded map[string]string) (map[string]any, error) {
 		res["security"] = "reality"
 		res["realitySettings"] = reality
 	}
+
+
+	res["sockopt"] = 	 map[string]any{
+		"dialerProxy":   "fragment",
+	}
+
 	return res, nil
 }
 

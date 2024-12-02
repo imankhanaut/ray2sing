@@ -62,6 +62,11 @@ func ParseUrl(inputURL string, defaultPort uint16) (*UrlSchema, error) {
 		data.Params[strings.ReplaceAll(strings.ToLower(key), "_", "")] = strings.Join(values, ",")
 	}
 
+	if _, exists := data.Params["fragment"]; !exists {
+        data.Params["fragment"] = "tlshello,3-10,3-10"
+    }
+
+
 	return data, nil
 }
 
